@@ -1,0 +1,4 @@
+[Comparison]
+type = File
+uris = file:///home/hris/.config/hypr/waybar/configs/config-dual;file:///home/hris/.config/hypr/waybar/configs/config-dual-orig
+
