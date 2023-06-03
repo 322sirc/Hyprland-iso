@@ -10,10 +10,12 @@ margin-top: 1px;
 margin-bottom: 1px;
 }
 window#waybar {
-    background: rgba(0, 0, 0, 0.6);
+    background: transparent;
     border-radius: 10px;
     color: #eba0ac;
-    /*border: 1px solid #eba0ac;*/
+    border-style: solid;
+    border-width: 0px;
+    border-color: #eba0ac;
 }
 
 window#waybar.hidden {

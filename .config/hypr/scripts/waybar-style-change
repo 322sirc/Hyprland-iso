@@ -11,6 +11,8 @@ elif [ "$THEMEIS" == "b&w" ]; then
 elif [ "$THEMEIS" == "rgb" ]; then
     SWITCHTO="-default_alter"
 elif [ "$THEMEIS" == "default_alter" ]; then
+    SWITCHTO="-maroon"
+elif [ "$THEMEIS" == "maroon" ]; then
     SWITCHTO="-mauve"
 elif [ "$THEMEIS" == "mauve" ]; then
     SWITCHTO="-light"

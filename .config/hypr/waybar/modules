@@ -271,6 +271,13 @@
   "tooltip-format": "Change wallpaper or style"
 },
   
+"custom/clipboard": {
+    "format": "󰅌",
+    "tooltip": false,
+    "on-click": "copyq menu",
+    "on-click-right": "copyq toggle"
+},
+  
 "custom/keybindings": {
   "format":"",
   "tooltip": false,

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cliphist list | wofi --show dmenu -H 200 -W 450   | cliphist decode | wl-copy

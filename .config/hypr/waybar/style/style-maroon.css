@@ -105,6 +105,7 @@ tooltip {
 #custom-weather,
 #custom-power,
 #custom-lock,
+#custom-clipboard,
 #custom-weather.severe,
 #custom-weather.sunnyDay,
 #custom-weather.clearNight,
@@ -143,4 +144,9 @@ tooltip {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-   
+#custom-clipboard {
+  color: #eba0ac;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding-right: 13px;
+}   
