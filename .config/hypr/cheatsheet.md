@@ -33,9 +33,13 @@
   Super CTRL SHIFT PrintSrc    *full screenshot + timer (5s)*
 
 # applications shortcuts
-  Super   T		  *file manager* (`thunar`) - if installed
-  Super   N     *default file manager* ('nemo')
-  #Super   K     *kitty*
+  Super   F		  *browser* (`firefox`) - if installed
+  Super   N     *default file manager* (`nemo`)
+  Super   K     *kitty* (`kitty`)
+  Super   Z     *text editor sublime-text-4* (`subl`)
+  Super   B     *kitty* (`pamac`)
+  Super   A     *alacritty* (`alacritty`)
+  Super   S     *spotify* (`spotify`)
 
 
   Keybindings file is located here *~/.config/hypr/configs/keybinds.conf*
