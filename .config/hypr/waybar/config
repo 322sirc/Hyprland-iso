@@ -1,1 +1,66 @@
-/home/hris/.config/hypr/waybar/configs/config-dual
+[{
+"include": "~/.config/hypr/waybar/modules",
+"layer": "top",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-left": 6,
+"margin-right": 10,
+"margin-top": 10,
+
+"modules-left": [
+	"wlr/workspaces", 
+	"cpu", 
+	"temperature", 
+	"memory",
+	"disk",
+	"tray", 
+	],
+  
+"modules-center": [
+	"custom/weather",
+	"clock",
+	], 
+
+"modules-right": [
+	"custom/clipboard",
+	"custom/updater",
+	"backlight",
+	"bluetooth",
+	"pulseaudio",
+	"battery",
+	],
+},
+{
+"include": "~/.config/hypr/waybar/modules",
+"height": 0,
+"name": "bottom",
+"layer": "top",
+"margin": "0px 0px 0px 0px",
+"position": "bottom",
+"margin-left": 10,
+"margin-right": 10,
+"margin-bottom": 6,
+
+"modules-left": [
+	"custom/menu",  
+	"wlr/taskbar",
+	 ],
+
+"modules-center": [
+	"cava",
+	],
+
+"modules-right": [
+	"hyprland/window",
+	"idle_inhibitor",
+	"custom/light_dark",
+	"custom/cycle_wall",	  
+	"custom/power",
+	],
+
+}]

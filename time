@@ -1,0 +1,103 @@
+conky.config = {
+	alignment = 'top_left',
+
+	default_outline_color = 'black',
+	default_shade_color = '#330',
+	double_buffer = true,
+
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = true,
+	draw_shades = false,
+
+	no_buffers = true,
+	override_utf8_locale = true,
+
+
+	own_window = true,
+-------------------------------------------------------------
+-- change this if you are not getting any conky display
+-- options are: normal, desktop, dock, panel or override (default: normal)
+-------------------------------------------------------------
+own_window_type = 'normal',
+-------------------------------------------------------------
+-- uncomment below hints line if not using override
+------------------------------------------------------------
+own_window_hints = 'below,sticky,undecorated,skip_taskbar,skip_pager',
+
+-- own_window_colour grey
+own_window_transparent = true,
+own_window_argb_visual = true,
+--own_window_class Conky
+
+-- ARGB can be used for real transparency,
+-- note that a composite manager is required for real transparency
+--own_window_argb_visual = true,
+
+-- Set the transparency alpha value from 0 to 255
+--own_window_argb_value = 80,
+
+	minimum_height = 200,
+    maximum_height = 200,
+	maximum_width  = 800,
+	minimum_width  = 1000,
+
+	use_xft = true,
+	xftalpha = 0.8,
+-------------------------------------------------------------
+-- Change the xftfont size value if the template is not
+-- appearing aligned
+------------------------------------------------------------
+	font = 'Helvetica Now Display Light:size=14',
+  	total_run_times = 0,
+
+-- this value is in bytes - do not sting over this ;-)
+	text_buffer_size = 2000,
+	update_interval = 1,
+
+--	gap_x = 95,
+--	gap_y = 1580,
+	gap_x = 1600,
+	gap_y = 20,
+
+
+	color0 = 'White',         --FFFFFF
+	color1 = '668fe9',
+	color2 = 'Ivory2',        --EEEEE0
+	color3 = 'ff9c9c',        --FF9C9C
+	color4 = 'ff7da9',        --FF7DA9
+	color5 = 'cyan',          --EE9A49
+	color6 = 'Gray',          --7E7E7E
+    color7 = 'Green',         --00FF45
+	color8 = 'DimGray',       --696969
+	color9 = 'Tomato',        --FF6347
+	};
+
+conky.text = [[
+$color3${font :size=80}${time %l:%M %p}${color}
+${voffset -50}${goto 50}${color0}${font :size=20}${time %A}
+${goto 50}${color0}${font :size=20}${time %d} ${time %B}, ${time %Y}
+${voffset -130}
+${goto 400}${color3}${font :size=12}CPU ${offset 9}$color${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${cpu cpu4}% ${cpu cpu5}% ${cpu cpu6}% ${freq_g}Ghz
+${goto 400}${color3}CPU Temp${goto 580}${font}${color3}${exec sensors | grep 'Package id' | awk '{print $4}'}
+${goto 400}${color3}${font :size=12}RAM ${offset 8}$color$mem / $memmax  ${memperc}%
+${goto 400}${color3}HD${offset 18}$color ${fs_free /} / ${fs_size /}
+
+${image $HOME/.conky/line.png -p 360,180 -s 2x100}
+#${color3}${font :size=12}ImageQuality${goto 580}$color${nvidia imagequality}
+]];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

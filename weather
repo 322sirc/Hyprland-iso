@@ -1,0 +1,175 @@
+conky.config = {
+	alignment = 'top_left',
+
+	default_outline_color = 'black',
+	default_shade_color = '#330',
+	double_buffer = true,
+
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = true,
+	draw_shades = false,
+
+	no_buffers = true,
+	override_utf8_locale = true,
+
+
+	own_window = true,
+-------------------------------------------------------------
+-- change this if you are not getting any conky display
+-- options are: normal, desktop, dock, panel or override (default: normal)
+-------------------------------------------------------------
+own_window_type = 'normal',
+-------------------------------------------------------------
+-- uncomment below hints line if not using override
+------------------------------------------------------------
+own_window_hints = 'below,sticky,undecorated,skip_taskbar,skip_pager',
+
+-- own_window_colour grey
+own_window_transparent = true,
+own_window_argb_visual = true,
+--own_window_class Conky
+
+-- ARGB can be used for real transparency,
+-- note that a composite manager is required for real transparency
+--own_window_argb_visual = true,
+
+-- Set the transparency alpha value from 0 to 255
+--own_window_argb_value = 80,
+
+	minimum_height = 500,
+--	minimum_height = 800,
+	maximum_height = 500,
+-- maximum_width 550,
+	maximum_width  = 1200,
+	minimum_width  = 1100,
+
+	use_xft = true,
+	xftalpha = 0.8,
+-------------------------------------------------------------
+-- Change the xftfont size value if the template is not
+-- appearing aligned
+------------------------------------------------------------
+	font = 'Helvetica Now Display Light:size=14',
+  	total_run_times = 0,
+
+-- this value is in bytes - do not sting over this ;-)
+	text_buffer_size = 2000,
+	update_interval = 1,
+
+--	gap_x = 95,
+--	gap_y = 1580,
+	gap_x = 0,
+	gap_y = 0,
+
+	color0 = 'White',         --FFFFFF
+	color1 = '668fe9',
+	color2 = 'Ivory2',        --EEEEE0
+	color3 = 'ff9c9c',          --E66464
+	color4 = 'pink1',         --FF7DA9
+	color5 = 'cyan',          --EE9A49
+	color6 = 'Gray',          --7E7E7E
+    color7 = 'Green',         --00FF45
+	color8 = 'DimGray',       --696969
+	color9 = 'Tomato',        --FF6347
+
+
+-- Pickering lat/long location
+    template1 = '43.900120',
+    template2 = '-79.132889',
+
+-------------------
+--  API Key
+-------------------------------------
+-- You should sign up and get your own API key for this - it's free anyway
+template6="aa1071ea3f0a2d4c20611540787bed78",
+
+
+-------------------------------------
+--  City ID - Pickering
+-------------------------------------
+template7="6104111",
+
+
+-------------------------------------
+--  Temp Unit (default, metric, imperial)
+-------------------------------------
+template8="metric",
+
+
+-------------------------------------
+--  Locale (e.g. "es_ES.UTF-8")
+--  Leave empty for default
+-------------------------------------
+template9="",         --character encoding protocol - change to suit
+
+};
+
+conky.text = [[
+${execi 3600 l=${template9}; l=${l%%_*}; curl -s "api.openweathermap.org/data/2.5/onecall?lat=${template1}&lon=${template2}&exclude=minutely,hourly&APPID=${template6}&units=${template8}&lang=$l" -o ~/.cache/tor-onecall.json}\
+# Description
+${voffset 3}${goto 350}${font Helvetica Now Display Light:size=20}${color0}${execi 600 jq -r .current.weather[0].description ~/.cache/tor-onecall.json | sed 's|\<.|\U&|g'}
+# present temp
+${voffset 5}${goto 350}${font Helvetica Now Display Light:size=36}${color3}${execi 600 jq -r .current.temp ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}'}°
+# Image icon
+${voffset 5}${goto 1000}${execi 600 cp -f ~/.conky/weather/$(jq -r .current.weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-c.png}${image ~/.cache/tor-onecall-c.png -p 410,40 -s 180x102}\
+# forecast date
+${voffset 50}${font Helvetica Now Display Light:size=11}${color0}${goto 200}${exec date -d +0day +"%a %d"}\
+${goto 330}${exec date -d +1day +"%a %d"}\
+${goto 460}${exec date -d +2day +"%a %d"}\
+${goto 590}${exec date -d +3day +"%a %d"}\
+${goto 720}${exec date -d +4day +"%a %d"}\
+${goto 850}${exec date -d +5day +"%a %d"}\
+${goto 980}${exec date -d +6day +"%a %d"}
+# forecast - hi/feel
+${voffset 0}${color3}${goto 200}${execi 600 jq ".daily[0].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }/${execi 600 jq ".daily[0].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 330}${execi 600 jq ".daily[1].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq ".daily[1].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 460}${execi 600 jq ".daily[2].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq ".daily[2].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 590}${execi 600 jq ".daily[3].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq ".daily[3].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 720}${execi 600 jq ".daily[4].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq ".daily[4].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 850}${execi 600 jq ".daily[5].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq ".daily[5].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 980}${execi 600 jq ".daily[6].temp.max" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq ".daily[6].feels_like.day" ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°
+#forecast icons
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[0].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-0.png}${image ~/.cache/tor-onecall-0.png -p 175,270 -s 100x60}
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[1].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-1.png}${image ~/.cache/tor-onecall-1.png -p 305,270 -s 100x60}
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[2].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-2.png}${image ~/.cache/tor-onecall-2.png -p 435,270 -s 100x60}
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[3].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-3.png}${image ~/.cache/tor-onecall-3.png -p 565,270 -s 100x60}
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[4].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-4.png}${image ~/.cache/tor-onecall-4.png -p 695,270 -s 100x60}
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[5].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-5.png}${image ~/.cache/tor-onecall-5.png -p 825,270 -s 100x60}
+${execi 600 cp -f ~/.conky/weather/$(jq -r .daily[6].weather[0].icon ~/.cache/tor-onecall.json).png ~/.cache/tor-onecall-6.png}${image ~/.cache/tor-onecall-6.png -p 955,270 -s 100x60}
+# fore lo/ feels
+${voffset -150}${color3}${goto 200}${execi 600 jq .daily[0].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[0].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 330}${execi 600 jq .daily[1].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[1].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 460}${execi 600 jq .daily[2].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[2].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 590}${execi 600 jq .daily[3].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[3].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 720}${execi 600 jq .daily[4].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[4].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 850}${execi 600 jq .daily[5].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[5].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+${goto 980}${execi 600 jq .daily[6].temp.min ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°/${execi 600 jq .daily[6].feels_like.night ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}' }°\
+#${voffset -150}${font :size=12}${goto 610}${color2}UTC  : ${color0}${execi 3600 jq ".timezone_offset"  ~/.cache/tor-onecall.json | awk '{print ($1/3600)}'} Hours\
+## hi        goto   wind     goto sunrise
+#${voffset 100}
+#${goto 400}${color2} Hi Temp: ${color0}${execi 600 jq ".current.temp"  ~/.cache/tor-onecall.json}°\
+#${goto 600}${color2} Wind spd: ${color0}${execi 600 jq -r .current.wind_speed ~/.cache/tor-onecall.json | awk '{print int($1+0.5)}'} km/h\
+#${goto 800}${color2} Sunrise: ${color0}${execi 600 ~/.conky/tor-getsr}
+## hi feels  goto   from     goto sunset
+#${voffset 2}${font Helvetica Now Display Light:size=11}${goto 400}${color2} Hi Flike: ${color0}${execi 600 jq ".current.feels_like"  ~/.cache/tor-onecall.json}°\
+#${goto 600}${color2} Wind from: ${color0}${execi 600 jq -r .current.wind_deg ~/.cache/tor-onecall.json}°\
+#${goto 800}${color2} Sunset: ${color0}${execi 600 ~/.conky/tor-getss}
+## low       goto   gust     goto Press
+#${voffset 2}${font Helvetica Now Display Light:size=11}${goto 400}${color2} Low Temp: ${color0}${execi 600 jq ".daily[0].temp.min"  ~/.cache/tor-onecall.json}°\
+#${goto 600}${color2} Wind gust: ${color0}${execi 600 jq -r .current.wind_speed ~/.cache/tor-onecall.json | awk '{print int($1*1.5+0.5)}'} km/h\
+#${goto 800}${color2} Pressure: ${color0}${execi 600 jq -r .current.pressure ~/.cache/tor-onecall.json} hPa
+## low feels goto   cloud&   goto hum
+#${voffset 2}${font Helvetica Now Display Light:size=11}${goto 400}${color2} Lo FLike: ${color0}${execi 600 jq ".daily[0].feels_like.night"  ~/.cache/tor-onecall.json}°\
+#${goto 600}${color2} Cloud pct: ${color0}${execi 600 jq -r .current.clouds ~/.cache/tor-onecall.json}%\
+#${goto 800}${color2} Humidity: ${color0}${execi 600 jq -r .current.humidity ~/.cache/tor-onecall.json}%
+## uvi       goto   visi     goto dew
+#${voffset 2}${font Helvetica Now Display Light:size=11}${goto 400}${color2} UV index: ${color0}${execi 600 jq ".current.uvi"  ~/.cache/tor-onecall.json}\
+#${goto 600}${color2} Visibility: ${color0}${execi 600 jq -r .current.visibility ~/.cache/tor-onecall.json | awk '{print int(($1/1000)+0.5)}'} km\
+#${goto 800}${color2} Dew point: ${color0}${execi 600 jq -r .current.dew_point ~/.cache/tor-onecall.json}°
+##${font LiquidCrystal:size=24}${voffset -10}${color #00ffff}${goto 810}${exec TZ='America/Toronto' date -R | cut -c 17-25}${font}#
+## Location & Last fetch
+##${font DroidSansMono:size=11}${goto 200}${font :size=11}${color2}    Location: ${color0}Pickering ON
+#${voffset 30}${goto 600}${color2} Last Fetch: ${color0}${execi 600 "ls -l ~/.cache/tor-onecall.json | cut -c 36-40"}
+
+]];

@@ -1,0 +1,18 @@
+[Default Applications]
+text/x-matlab=sublime_text.desktop
+text/plain=sublime_text.desktop
+application/x-trash=sublime_text.desktop
+application/x-font-vfont=sublime_text.desktop
+inode/directory=xfce4-file-manager.desktop
+x-scheme-handler/trash=xfce4-file-manager.desktop
+
+[Added Associations]
+text/x-matlab=sublime_text.desktop;
+text/plain=sublime_text.desktop;
+application/x-trash=sublime_text.desktop;
+application/x-font-vfont=sublime_text.desktop;
+application/vnd.kde.kxmlguirc=sublime_text.desktop;
+application/x-shellscript=sublime_text.desktop;
+inode/directory=xfce4-file-manager.desktop;
+x-scheme-handler/trash=xfce4-file-manager.desktop;
+
