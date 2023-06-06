@@ -75,8 +75,8 @@ own_window_argb_visual = true,
 
 
 -- Pickering lat/long location
-    template1 = '43.900120',
-    template2 = '-79.132889',
+    template1 = 'xx',
+    template2 = 'xx',
 
 -------------------
 --  API Key
