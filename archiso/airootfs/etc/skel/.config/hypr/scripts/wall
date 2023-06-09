@@ -1,0 +1,5 @@
+#!/bin/bash
+#swww init 
+#swaybg -i /home/cris/Pictures/a11.jpg
+swaybg -m fill -i /usr/share/backgrounds/wallpapers-1/1.jpg
+#swww img /usr/share/backgrounds/wallpapers-1/a11.jpg

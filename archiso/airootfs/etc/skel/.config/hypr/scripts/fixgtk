@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#echo "Applying theme to GTK-4 applications"
+#echo "#################################"
+
+ln -sf ~/.themes/Catppuccin-Frappe-Standard-Maroon-Dark/gtk-4.0/assets ~/.config/gtk-4.0/assets
+ln -sf ~/.themes/Catppuccin-Frappe-Standard-Maroon-Dark/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
+ln -sf ~/.themes/Catppuccin-Frappe-Standard-Maroon-Dark/gtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css

@@ -1,0 +1,8 @@
+[Nemo Action]
+
+ Name=Tilix
+ Comment=Open the 'tilix' terminal in the selected folder
+ Exec=tilix --working-directory="%F"
+ Icon-Name=terminal
+ Selection=any
+ Extensions=dir;

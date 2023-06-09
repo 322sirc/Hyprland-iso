@@ -1,0 +1,43 @@
+#!/bin/bash
+echo "Copy /etc/skel to /root"
+echo "#################################"
+
+cp -aT /etc/skel/ /root/
+
+echo "Permissions"
+echo "#################################"
+chmod -v 750 /root
+
+
+echo "Settings: Mozilla Firefox touchscreen scrolling"
+echo "#################################"
+echo "MOZ_USE_XINPUT2 DEFAULT=1" >> /etc/security/pam_env.conf
+
+echo "Settings: Makepkg with all processors"
+echo "#################################"
+echo "MAKEFLAGS="-j$(nproc)"" >> /etc/makepkg.conf
+
+echo "Change Cursor Globally "
+echo "#################################"
+sed -i "s/Inherits=Adwaita/Inherits=Catppuccin-Maroon-Cursors/g" /usr/share/icons/default/index.theme
+
+echo "Settings: ConsoleFonts "
+echo "#################################"
+echo "FONT=ter-132b" >> /etc/vconsole.conf
+
+echo "Enable fstrim.service "
+echo "#################################"
+sudo systemctl enable fstrim.timer
+
+echo "Enable thermald.service "
+echo "#################################"
+sudo systemctl enable thermald.service
+
+echo "Fixing SDDM.conf User"
+echo "#################################"
+sed -i "s/User=liveuser/User=/g" /etc/sddm.conf.d/kde_settings.conf
+
+echo "Applying Flatpak GTK Overrides"
+echo "#################################"
+sudo flatpak override --filesystem=~/.themes
+sudo flatpak override --env=GTK_THEME=Catppuccin-Frappe-Standard-Maroon-Dark

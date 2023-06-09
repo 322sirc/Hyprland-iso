@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm ~/.cache/swww/eDP-1
+rm /var/run/user/1000/swww.socket
+swww-daemon &
