@@ -285,7 +285,10 @@ stacer-bin
 the_platinum_searcher-bin
 tilix-git
 vlc
+
+playerctl
 mpv
+mpv-mpris-git
 yt-dlp
 
 #apps-personal-repo
@@ -328,7 +331,6 @@ mlocate
 nomacs
 p7zip
 pkgfile
-playerctl
 polkit
 polkit-gnome
 qt6ct
