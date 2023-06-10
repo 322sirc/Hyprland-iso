@@ -20,62 +20,62 @@ notification(){
 }
 
 menu(){
-printf "1. Lofi Girl\n"
-printf "2. 96.3 Easy Rock - FM Radio\n"
-printf "3. Box Lofi\n"
-printf "4. Top Music 2023\n"
-printf "5. Youtube Global Top 100\n"
-printf "6. SmoothChill\n"
-printf "7. Relaxing Music\n"
-printf "8. Youtube Remix\n"
-printf "9. K-Drama-OST2"
+printf "1. Technolover-Vocal-Trance Radio\n"
+printf "2. DI.fm VocalTrance Radio\n"
+printf "3. PulsRadio Trance Radio\n"
+printf "4. Youtube Aurosonic-Euforia Album\n"
+printf "5. TranceBase.FM\n"
+printf "6. SunshineLive-VT\n"
+printf "7. DFM-Trance\n"
+printf "8. Youtube-VocalTrance\n"
+printf "9. Best VT youtube"
 }
 main() {
 choice=$(menu | ${wofi_command} | cut -d. -f1)
 case $choice in
 1)
     notification
-    mpv "https://play.streamafrica.net/lofiradio"
+    mpv "https://stream.technolovers.fm/vocal-trance?ref=radiobrowser"
     return
     ;;
 2)
    notification
-   mpv "https://tunein.com/radio/Easy-Rock-Manila-963-s120725/"
+   mpv "http://prem1.di.fm/vocaltrance_hi?907d839cb7ee13512903cbcf"
    return
 ;; 
 3)
   notification
-   mpv "http://stream.zeno.fm/f3wvbbqmdg8uv"
+   mpv "https://sc2.gergosnet.com:80/pulstranceHD.mp3"
    return
    ;;
 4)
    notification ;
-   mpv --shuffle --vid=no "https://youtube.com/playlist?list=PL6k9a6aYB2zk0qSbXR-ZEiwqgdHymsRtQ"
+   mpv --vid=no "https://youtu.be/4duklTPS084"
    return
    ;;
 5)
   notification ;
-  mpv --shuffle --vid=no "https://youtube.com/playlist?list=PL4fGSI1pDJn5kI81J1fYWK5eZRl1zJ5kM"
+  mpv "http://listener3.mp3.tb-group.fm:80/trb.mp3"
   return
   ;;
 6)
   notification ;
-  mpv "https://media-ssl.musicradio.com/SmoothChill"
+  mpv "https://stream.sunshine-live.de/vocaltrance/mp3-192"
   return
   ;;
 7)
   notification ;
-  mpv --shuffle --vid=no "https://youtube.com/playlist?list=PLMIbmfP_9vb8BCxRoraJpoo4q1yMFg4CE"
+  mpv "https://dfm-trance.hostingradio.ru/trance96.aacp"
   return
 ;;
 8)
   notification ;
-  mpv --shuffle  --vid=no "https://youtube.com/playlist?list=PLeqTkIUlrZXlSNn3tcXAa-zbo95j0iN-0"
+  mpv --shuffle  --vid=no "https://youtu.be/42ao7PafV-s"
   return
   ;;
 9)
   notification ;
-  mpv --shuffle  --vid=no "https://youtube.com/playlist?list=PLUge_o9AIFp4HuA-A3e3ZqENh63LuRRlQ"
+  mpv --shuffle  --vid=no "https://youtube.com/playlist?list=PLUHBf5XMtOmRMC__VHZw3xmjyZqQko2_n"
   return
 ;;
 esac

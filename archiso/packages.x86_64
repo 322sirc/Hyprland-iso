@@ -285,6 +285,8 @@ stacer-bin
 the_platinum_searcher-bin
 tilix-git
 vlc
+mpv
+yt-dlp
 
 #apps-personal-repo
 archlinux-appstream-data-pamac
@@ -442,7 +444,6 @@ lxappearance
 lxrandr
 mako
 micro
-mpv
 nwg-look-bin
 pacman-contrib
 pamixer

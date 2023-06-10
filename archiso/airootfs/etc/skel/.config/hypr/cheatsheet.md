@@ -81,4 +81,4 @@
 
 
 
-TO CLOSE THIS DOCUMENT - Super q or Super Shift q
+TO CLOSE THIS DOCUMENT - Super x or Super Shift q

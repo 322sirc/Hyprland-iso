@@ -27,7 +27,7 @@
 	], 
 
 "modules-right": [
-	"custom/clipboard",
+	//"custom/clipboard",
 	"custom/updater",
 	"backlight",
 	"bluetooth",
