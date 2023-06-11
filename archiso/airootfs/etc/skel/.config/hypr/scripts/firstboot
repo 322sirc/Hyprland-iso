@@ -1,0 +1,46 @@
+# Get the directory path of the current script
+#script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Specify the file path using the script directory
+#exec_file="$script_dir/exec.conf"
+
+# Check if the file exists
+#if [ -f "$exec_file" ]; then
+    # Find the line number of "#First boot"
+#    start_line=$(grep -n "#First boot of the system" "$exec_file" | cut -d ":" -f 1)
+
+    # Initialize the end line as start line
+#    end_line=$start_line
+
+    # Find the first empty line after the start line
+#    while IFS= read -r line; do
+#        ((end_line++))
+#        if [[ -z $line ]]; then
+#            break
+#        fi
+#    done < <(tail -n +$start_line "$exec_file")
+
+    # Comment out the lines after the start line up to the end line
+#    sed -i "${start_line},${end_line}s/^/#/" "$exec_file"
+#fi
+#!/bin/bash
+
+# Specify the file path
+EXEC="$HOME/.config/hypr/configs/exec.conf"
+
+# Find the line number of "#First boot"
+start_line=$(grep -n "#First boot" "$EXEC" | cut -d ":" -f 1)
+
+# Initialize the end line as start line
+end_line=$start_line
+
+# Find the first empty line after the start line
+while IFS= read -r line; do
+    ((end_line++))
+    if [[ -z $line ]]; then
+        break
+    fi
+done < <(tail -n +"$start_line" "$EXEC")
+
+# Comment out the lines after the start line up to the end line
+sed -i "${start_line},${end_line}s/^/#/" "$EXEC"
