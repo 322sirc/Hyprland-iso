@@ -23,12 +23,13 @@ menu(){
 printf "1. Technolover-Vocal-Trance Radio\n"
 printf "2. DI.fm VocalTrance Radio\n"
 printf "3. PulsRadio Trance Radio\n"
-printf "4. Youtube Aurosonic-Euforia Album\n"
+printf "4. YT-Aurosonic-Euforia Album\n"
 printf "5. TranceBase.FM\n"
 printf "6. SunshineLive-VT\n"
 printf "7. DFM-Trance\n"
-printf "8. Youtube-VocalTrance\n"
-printf "9. Best VT youtube"
+printf "8. YT-VocalTrance\n"
+printf "9. YT-Best VT\n"
+printf "10. YT-Best Female VT-RMM\n"
 }
 main() {
 choice=$(menu | ${wofi_command} | cut -d. -f1)
@@ -78,6 +79,11 @@ case $choice in
   mpv --shuffle  --vid=no "https://youtube.com/playlist?list=PLUHBf5XMtOmRMC__VHZw3xmjyZqQko2_n"
   return
 ;;
+10)
+  notification ;
+  mpv --shuffle  --vid=no "https://youtu.be/dQmurYOqOw4"
+  return
+  ;;
 esac
 }
 

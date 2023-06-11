@@ -3,7 +3,7 @@
 SCRIPTSDIR=$HOME/.config/hypr/scripts
 
 #wallpaper load
-${SCRIPTSDIR}/wall &
+#${SCRIPTSDIR}/wall &
 
 # Lauch statusbar (waybar)
 ${SCRIPTSDIR}/statusbar &
