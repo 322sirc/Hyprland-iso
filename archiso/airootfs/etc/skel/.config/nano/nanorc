@@ -14,7 +14,7 @@
 
 ## When soft line wrapping is enabled, make it wrap lines at blanks
 ## (tabs and spaces) instead of always at the edge of the screen.
-# set atblanks
+set atblanks
 
 ## Automatically indent a newly created line to the same number of
 ## tabs and/or spaces as the preceding line -- or as the next line
@@ -91,7 +91,7 @@ set linenumbers
 ## mouse clicks can be used to place the cursor, set the mark (with a
 ## double click), and execute shortcuts.  The mouse will work in the
 ## X Window System, and on the console when gpm is running.
-# set mouse
+set mouse
 
 ## Switch on multiple file buffers (inserting a file will put it into
 ## a separate buffer).
@@ -157,7 +157,7 @@ set nonewlines
 # set smarthome
 
 ## Spread overlong lines over multiple screen lines.
-# set softwrap
+set softwrap
 
 ## Use this spelling checker instead of the internal one.  This option
 ## does not have a default value.
@@ -208,7 +208,7 @@ set promptcolor lightwhite,lightblack
 set statuscolor white,green
 set errorcolor brightwhite,red
 set spotlightcolor black,lime
-set selectedcolor white,white
+set selectedcolor lightwhite,magenta
 set stripecolor ,yellow
 set scrollercolor cyan
 set numbercolor cyan
@@ -227,6 +227,7 @@ set scrollercolor magenta
 set numbercolor white
 set keycolor brightwhite
 set functioncolor white
+set ttymouse=sgr
 
 
 ## === Syntax coloring ===
