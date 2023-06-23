@@ -13,12 +13,15 @@
 "margin-top": 10,
 
 "modules-left": [
-	"wlr/workspaces", 
+	"wlr/workspaces",
+	"custom/middle", 
 	"cpu", 
 	"temperature", 
 	"memory",
 	"disk",
-	"tray", 
+	"tray",
+	"custom/middle", 
+	"custom/file",
 	],
   
 "modules-center": [
@@ -28,7 +31,10 @@
 
 "modules-right": [
 	//"custom/clipboard",
+	"custom/middle", 
+	"network",
 	"custom/updater",
+	"custom/middle", 
 	"backlight",
 	"bluetooth",
 	"pulseaudio",
