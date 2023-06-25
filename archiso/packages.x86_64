@@ -228,7 +228,7 @@ mtpfs
 udiskie
 udisks2
 xdg-user-dirs
-viewnior
+
 
 ###### Drivers for laptop touchsreen toucpad
 
@@ -454,10 +454,12 @@ python-requests
 rofi-lbonn-wayland-only-git
 slurp
 swaybg
+swayimg
 swayidle
 swaylock-effects
 swww
 tty-clock
+viewnior
 waybar-hyprland-git
 wf-recorder-git
 wlogout
@@ -468,3 +470,5 @@ wl-clipboard
 wl-clipboard-history-git
 wofi
 xdg-desktop-portal-hyprland-git
+xdg-users-dirs
+xorg-xwayland
