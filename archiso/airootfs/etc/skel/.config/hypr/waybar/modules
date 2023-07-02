@@ -156,17 +156,18 @@
 },
 
 "network": {
-  "format": "{ifname}",
-  "format-wifi": "{essid}  ",
-  "format-ethernet": " Wired",
-  "format-disconnected": "", //An empty format will hide the module.
-  "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-  "format-linked": " {ifname} (No IP)",
-  "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-  "tooltip-format-ethernet": "{ifname} ",
-  "tooltip-format-disconnected": " Disconnected",
-  "max-length": 50,
-  "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+  //"format": "{ifname}",
+  //"format-wifi": "{essid}  ",
+  //"format-ethernet": " Wired",
+  //"format-disconnected": "", //An empty format will hide the module.
+  //"format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+  //"format-linked": " {ifname} (No IP)",
+  //"format-wifi": "{essid} ({signalStrength}%) ",
+  //"format-ethernet": "{ifname} ",
+  //"format-disconnected": " Disconnected",
+  //"max-length": 50,
+  //"format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+  "format": " {bandwidthUpBits} |  {bandwidthDownBits}",
 },
   
 "pulseaudio": {
@@ -273,10 +274,10 @@
 },
   
 "custom/clipboard": {
-    "format": "󰅌",
+    "format": "󰅌 ",
     "tooltip": false,
-    "on-click": "copyq menu",
-    "on-click-right": "copyq toggle"
+    "on-click": "$HOME/.config/hypr/scripts/clipmanager",
+    "on-click-right": "$HOME/.config/hypr/scripts/clipmanager toggle"
 },
 
 "custom/file":{

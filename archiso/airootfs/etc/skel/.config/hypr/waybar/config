@@ -1,5 +1,5 @@
 [{
-"include": "~/.config/hypr/waybar/modules",
+"include": "$HOME/.config/hypr/waybar/modules",
 "layer": "top",
 //"mode": "dock",
 "exclusive": true,
@@ -19,8 +19,9 @@
 	"temperature", 
 	"memory",
 	"disk",
-	"tray",
+	"network",
 	"custom/middle", 
+	"tray",	
 	"custom/file",
 	],
   
@@ -30,11 +31,10 @@
 	], 
 
 "modules-right": [
-	//"custom/clipboard",
+	"custom/middle",
+	"custom/clipboard",
 	"custom/middle", 
-	"network",
 	"custom/updater",
-	"custom/middle", 
 	"backlight",
 	"bluetooth",
 	"pulseaudio",
@@ -42,7 +42,7 @@
 	],
 },
 {
-"include": "~/.config/hypr/waybar/modules",
+"include": "$HOME/.config/hypr/waybar/modules",
 "height": 0,
 "name": "bottom",
 "layer": "top",
