@@ -15,12 +15,11 @@ HEIGHT=40
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 
-#PICS=($(ls ${DIR} | grep -e ".jpg$" -e ".jpeg$" -e ".png$" -e ".gif$"))
-
 PICS=($(ls ${DIR} | grep -e ".jpg$" -e ".jpeg$" -e ".png$" -e ".gif$"))
 
 RANDOM_PIC=${PICS[ $RANDOM % ${#PICS[@]} ]}
 RANDOM_PIC_NAME="${#PICS[@]}. random"
+
 
 # WOFI STYLES
 CONFIG="$HOME/.config/hypr/wofifull/config"
@@ -28,6 +27,7 @@ STYLE="$HOME/.config/hypr/wofifull/style.css"
 COLORS="$HOME/.config/hypr/wofifull/colors"
 
 # to check if swaybg is running
+
 if [[ $(pidof swaybg) ]]; then
   pkill swaybg
 fi
@@ -42,7 +42,8 @@ wofi_command="wofi --show dmenu \
 			--matching=fuzzy"
 
 menu(){
-    # Here we are looping in the PICS array that is composed of all images in the $DIR folder
+    # Here we are looping in the PICS array that is composed of all images in the $DIR
+    # folder 
     for i in ${!PICS[@]}; do
         # keeping the .gif to make sue you know it is animated
         if [[ -z $(echo ${PICS[$i]} | grep .gif$) ]]; then

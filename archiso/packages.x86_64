@@ -292,7 +292,7 @@ mpv-mpris-git
 yt-dlp
 
 #apps-personal-repo
-archlinux-appstream-data-pamac
+
 libpamac-git
 pamac-aur-git
 flatpak

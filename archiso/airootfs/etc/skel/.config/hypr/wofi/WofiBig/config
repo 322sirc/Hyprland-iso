@@ -5,7 +5,7 @@ show=drun
 prompt=Apps
 normal_window=true
 layer=overlay
-term=tilix
+term=foot
 columns=5
 
 ## Geometry
