@@ -301,7 +301,7 @@ intel-compute-runtime
 nemo-compare
 nemo-meld-compare
 #oh-my-posh-bin
-libinput-gestures
+libinput-gestures-git
 gestures
 
 ###########################################################################
@@ -460,7 +460,7 @@ swaylock-effects
 swww-git
 tty-clock
 viewnior
-waybar-hyprland-cava-git
+waybar-hyprland-git
 wf-recorder-git
 wlogout
 #wlprop

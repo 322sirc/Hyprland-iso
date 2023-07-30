@@ -775,7 +775,7 @@ disk_display="off"
 # Values:   'ascii', 'caca', 'chafa', 'jp2a', 'iterm2', 'off',
 #           'pot', 'termpix', 'pixterm', 'tycat', 'w3m', 'kitty'
 # Flag:     --backend
-image_backend='kitty'
+image_backend='sixel'
 
 # Image Source
 #
@@ -789,7 +789,7 @@ image_backend='kitty'
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-image_source="$HOME/.config/neofetch/images/sakurafetch.png"
+image_source="$HOME/.config/neofetch/images/sakura.png"
 
 # Image Options
 
@@ -852,7 +852,7 @@ gap=4
 # Flags:   --xoffset
 #          --yoffset
 yoffset=2
-xoffset=2
+xoffset=20
 
 # Image background color
 # Only works with the w3m backend.
@@ -860,7 +860,7 @@ xoffset=2
 # Default: ''
 # Values:  'color', 'blue'
 # Flag:    --bg_color
-background_color=
+#background_color= 'color'
 
 
 # Misc Options

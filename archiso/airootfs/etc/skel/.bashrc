@@ -8,6 +8,7 @@ export LIBVA_DRIVER_NAME=iHD
 export MOZ_X11_EGL=1
 export MOZ_DISABLE_RDD_SANDBOX=1
 
+
 #Ibus settings if you need them
 #type ibus-setup in terminal to change settings and start the daemon
 #delete the hashtags of the next lines and restart
@@ -237,8 +238,12 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias mkinit="sudo mkinitcpio -P"
 alias mkernel="makepkg -s --skippgpcheck"
 alias upsum="updpkgsums"
+alias mkpkgsc="makepkg -sc"
+alias mkpkgs="makepkg -s"
 alias mkinstall="makepkg -sic"
 alias locinstall="sudo pacman -U"
+alias locinstallz="sudo pacman -U *.zst"
+
 alias bash-refresh="source ~/.bashrc"
 alias refresh-keys='sudo pacman-key --refresh-keys'
 alias rate-mirror="rate-mirrors --allow-root --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist && sudo pacman -Sy"

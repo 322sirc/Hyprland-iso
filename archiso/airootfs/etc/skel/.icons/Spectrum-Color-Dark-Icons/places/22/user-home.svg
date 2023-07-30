@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="22"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="user-home.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="2.3050847"
+     inkscape:cy="8.0338983"
+     inkscape:window-width="1920"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style2">.ColorScheme-Text { color:#d8dee9; }</style>
+  </defs>
+  <path
+     class="ColorScheme-Text"
+     d="M 11.078555,3 C 10.942172,3 10.805831,3.051809 10.701321,3.1563056 L 3.1567565,10.703006 c -0.2090087,0.209008 -0.2090087,0.545448 0,0.754456 0.2090086,0.20901 0.5454481,0.20901 0.7544567,0 L 4.676095,10.69258 v 6.173262 C 4.676095,18.048166 5.6279289,19 6.8102524,19 H 15.34688 c 1.182322,0 2.134158,-0.951834 2.134158,-2.134158 V 10.69258 l 0.764881,0.764882 c 0.209011,0.20901 0.545448,0.20901 0.754459,0 0.209004,-0.209008 0.209004,-0.545448 0,-0.754456 L 11.45581,3.1563056 C 11.351307,3.0518022 11.21496,3 11.078577,3 Z m 0,1.2900979 5.335391,5.3353927 v 7.2403424 c 0,0.591158 -0.475918,1.067075 -1.067076,1.067075 h -2.134157 v -3.201233 c 0,-1.182321 -0.951833,-2.134155 -2.134158,-2.134155 -1.1823226,0 -2.1341563,0.951834 -2.1341563,2.134155 v 3.201233 H 6.8102413 c -0.5911613,0 -1.0670787,-0.475917 -1.0670787,-1.067075 V 9.6254906 Z"
+     fill="currentColor"
+     id="path6"
+     style="stroke-width:1.06709" />
+</svg>
