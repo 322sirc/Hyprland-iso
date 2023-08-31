@@ -31,7 +31,7 @@ echo
 	#ArchLinuxCalamaresInstallationVersion='v22.09.15'
 
 	# setting of the general parameters
-	archisoRequiredVersion="archiso 71-1"
+	archisoRequiredVersion="archiso 72-1"
 	buildFolder=$HOME"/Hyprland-build"
 	outFolder=$HOME"/Hyprland-iso"
 	archisoVersion=$(sudo pacman -Q archiso)
