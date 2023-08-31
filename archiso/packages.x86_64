@@ -5,9 +5,13 @@
 archiso
 alsa-utils
 amd-ucode
+arch-install-scripts
 archinstall
+b43-fwcutter
 base
 bind
+brltty
+broadcom-wl
 btrfs-progs
 cryptsetup
 ddrescue
@@ -97,6 +101,7 @@ tcpdump
 terminus-font
 testdisk
 tmux
+tmp2-tools
 tpm2-tss
 udftools
 usb_modeswitch
