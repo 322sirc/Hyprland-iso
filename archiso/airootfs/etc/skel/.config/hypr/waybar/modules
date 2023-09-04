@@ -124,6 +124,28 @@
   "tooltip": false,
 },
 
+"hyprland/workspaces": {
+  "format": "{name}",
+  //"format": "{name}: {icon}",
+  "on-click": "activate",
+  "all-outputs": true,
+  "sort-by-number": true,
+  "format-icons": {
+    "1": "1  ",
+    "2": "2  ",
+    "3": "3  ",
+    "4": "4  ",
+    "5": "5  ",
+    "6": "6  ",
+    "7": "7  ",
+    "8": "8  ",
+    "9": "9  ",
+    "10": " 10 "
+  },
+  "on-scroll-up": "hyprctl dispatch workspace e+1",
+  "on-scroll-down": "hyprctl dispatch workspace e-1",
+},
+
 "hyprland/window": {
   "format": "{}",
   "max-length": 360,
@@ -228,28 +250,6 @@
   "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
   "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
   "format-icons": ["", "", ""],
-},
-  
-"wlr/workspaces": {
-  "format": "{name}",
-  //"format": "{name}: {icon}",
-  "on-click": "activate",
-  "all-outputs": true,
-  "sort-by-number": true,
-  "format-icons": {
-    "1": "1  ",
-    "2": "2  ",
-    "3": "3  ",
-    "4": "4  ",
-    "5": "5  ",
-    "6": "6  ",
-    "7": "7  ",
-    "8": "8  ",
-    "9": "9  ",
-    "10": " 10 "
-  },
-  "on-scroll-up": "hyprctl dispatch workspace e+1",
-  "on-scroll-down": "hyprctl dispatch workspace e-1",
 },
   
 "wlr/taskbar": {
