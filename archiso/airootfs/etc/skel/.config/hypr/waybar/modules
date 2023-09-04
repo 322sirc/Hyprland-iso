@@ -32,7 +32,6 @@
   "format-charging": " {capacity}%",
   "format-plugged": " {capacity}%",
   "format-full": "{icon} Full",
-  //"format-good": "",
   "format-alt": "{icon} {time}",
   "format-icons": ["", "", "", "", ""],
   "format-time": "{H}h {M}min",
@@ -52,13 +51,13 @@
 
 "cava": {
   //"cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-  "framerate": 60,
+  "framerate": 30,
   "autosens": 1,
   "sensitivity": 100,
   "bars": 14,
   "lower_cutoff_freq": 50,
   "higher_cutoff_freq": 10000,
-  "method": "pulse",
+  "method": "pipewire",
   "source": "auto",
   "stereo": true,
   "reverse": false,
@@ -107,6 +106,7 @@
   "format-alt-click": "click",
   "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
   "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+  "on-click-right": "missioncenter",
 },
 
 "disk": {
@@ -119,31 +119,16 @@
   "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
 },
 
+"hyprland/language": {
+  "format": "Lang: {}",
+  "format-en": "US",
+  "format-tr": "Korea",
+  "keyboard-name": "at-translated-set-2-keyboard",
+},
+
 "hyprland/submap": {
   "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
   "tooltip": false,
-},
-
-"hyprland/workspaces": {
-  "format": "{name}",
-  //"format": "{name}: {icon}",
-  "on-click": "activate",
-  "all-outputs": true,
-  "sort-by-number": true,
-  "format-icons": {
-    "1": "1  ",
-    "2": "2  ",
-    "3": "3  ",
-    "4": "4  ",
-    "5": "5  ",
-    "6": "6  ",
-    "7": "7  ",
-    "8": "8  ",
-    "9": "9  ",
-    "10": " 10 "
-  },
-  "on-scroll-up": "hyprctl dispatch workspace e+1",
-  "on-scroll-down": "hyprctl dispatch workspace e-1",
 },
 
 "hyprland/window": {
@@ -152,12 +137,31 @@
   "separate-outputs": true,
 },
 
-"hyprland/language": {
-  "format": "Lang: {}",
-  "format-en": "US",
-  "format-tr": "Korea",
-  "keyboard-name": "at-translated-set-2-keyboard",
-},
+"hyprland/workspaces": {
+    "format": "{name}",
+    //"format": "{name}: {icon}",
+    //"format": "{icon}",
+    "show-special": false,
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      "1": "main  ",
+      "2": "2  ",
+      "3": "3  ",
+      "4": "4  ",
+      "5": "5  ",
+      "6": "6  ",
+      "7": "7  ",
+      "8": "8  ",
+      "9": "9  ",
+      "10": " 10 ",
+      "focused": "",
+      "default": "",
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  },
   
 "idle_inhibitor": {
   "format": "{icon}",
@@ -166,6 +170,19 @@
     "deactivated": " ",
                   }
 },
+
+"keyboard-state": {
+      //"numlock": true,
+      "capslock": true,
+      "format": {
+          "numlock": "N {icon}",
+          "capslock": "󰪛 {icon}"                                                                                                                                                       
+      },
+      "format-icons": {
+          "locked": "",
+          "unlocked": ""
+      }
+  },
 
 "memory": {
   "interval": 10,
@@ -246,11 +263,13 @@
   "format": "{icon} {volume} %",
   "format-muted": " Mute",
   "on-click": "~/.config/hypr/scripts/volume --toggle",
-  "on-click-right": "pavucontrol",
+  "on-click-right": "pavucontrol -t 3",
   "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
   "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
   "format-icons": ["", "", ""],
 },
+  
+
   
 "wlr/taskbar": {
   "format": "{icon} {name} ",

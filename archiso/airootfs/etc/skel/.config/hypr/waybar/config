@@ -64,7 +64,7 @@
 "modules-right": [
 	"hyprland/window",
 	"idle_inhibitor",
-	"custom/light_dark",
+	//"custom/light_dark",
 	"custom/cycle_wall",	  
 	"custom/power",
 	],
