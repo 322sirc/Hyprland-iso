@@ -15,7 +15,7 @@
 
 "modules-left": [
 	"custom/menu", 
-	"wlr/workspaces"
+	"hyprland/workspaces"
 	],
 "modules-center": [
 	"clock",
