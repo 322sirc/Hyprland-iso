@@ -8,7 +8,6 @@ export LIBVA_DRIVER_NAME=iHD
 export MOZ_X11_EGL=1
 export MOZ_DISABLE_RDD_SANDBOX=1
 
-
 #Ibus settings if you need them
 #type ibus-setup in terminal to change settings and start the daemon
 #delete the hashtags of the next lines and restart
@@ -63,7 +62,7 @@ alias remove="sudo pacman -Rs"
 
 alias rkeys='sudo pacman-key --refresh-keys'
 alias refresh-keys='sudo pacman-key --refresh-keys'
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias cleanup='sudo pacman -Scc'
 
 ##Performance
 alias balance="powerprofilesctl set balanced"
@@ -101,6 +100,7 @@ alias cb='cp /etc/skel/.bashrc ~/.bashrc && exec bash'
 alias cz='cp /etc/skel/.zshrc ~/.zshrc && echo "Copied."'
 
 #switch between bash and zsh
+alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
@@ -126,18 +126,18 @@ alias trizenskip='trizen -S --skipinteg'
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
-#get fastest mirrors in your neighborhood
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-#our experimental - best option for the moment
-alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
-alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
+##get fastest mirrors in your neighborhood
+#alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+#alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+#alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+#alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+##our experimental - best option for the moment
+#alias mirrorx="sudo reflector --verbose -phttps -f10 -l10 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy"
+#alias mirrorxx="sudo reflector --verbose -phttps -f10 -l10 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy"
+#alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
+#alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
 alias rate-mirror="rate-mirrors --allow-root --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist && sudo pacman -Sy"
-
+alias mirrors="rate-mirrors --allow-root --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist && sudo pacman -Sy"
 
 
 #shopt
@@ -205,13 +205,13 @@ alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias keyfix="/usr/local/bin/fixkey"
-alias key-fix="/usr/local/bin/fixkey"
-alias keys-fix="/usr/local/bin/fixkey"
-alias fixkey="/usr/local/bin/fixkey"
-alias fixkeys="/usr/local/bin/fixkey"
-alias fix-key="/usr/local/bin/fixkey"
-alias fix-keys="/usr/local/bin/fixkey"
+alias keyfix="sudo /usr/local/bin/fixkey"
+alias key-fix="sudo /usr/local/bin/fixkey"
+alias keys-fix="sudo /usr/local/bin/fixkey"
+alias fixkey="sudo /usr/local/bin/fixkey"
+alias fixkeys="sudo /usr/local/bin/fixkey"
+alias fix-key="sudo /usr/local/bin/fixkey"
+alias fix-keys="sudo /usr/local/bin/fixkey"
 
 
 #maintenance
@@ -238,12 +238,8 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias mkinit="sudo mkinitcpio -P"
 alias mkernel="makepkg -s --skippgpcheck"
 alias upsum="updpkgsums"
-alias mkpkgsc="makepkg -sc"
-alias mkpkgs="makepkg -s"
 alias mkinstall="makepkg -sic"
 alias locinstall="sudo pacman -U"
-alias locinstallz="sudo pacman -U *.zst"
-
 alias bash-refresh="source ~/.bashrc"
 alias refresh-keys='sudo pacman-key --refresh-keys'
 alias rate-mirror="rate-mirrors --allow-root --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist && sudo pacman -Sy"
@@ -300,18 +296,6 @@ ex ()
   fi
 }
 
-
-#arcolinux applications
-alias att="archlinux-tweak-tool"
-alias adt="arcolinux-desktop-trasher"
-alias abl="arcolinux-betterlockscreen"
-alias agm="arcolinux-get-mirrors"
-alias amr="arcolinux-mirrorlist-rank-info"
-alias aom="arcolinux-osbeck-as-mirror"
-alias ars="arcolinux-reflector-simple"
-alias atm="arcolinux-tellme"
-alias avs="arcolinux-vbox-share"
-alias awa="arcolinux-welcome-app"
 
 
 #moving your personal files and folders from /personal to ~
